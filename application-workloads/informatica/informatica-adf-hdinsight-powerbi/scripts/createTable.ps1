@@ -83,11 +83,7 @@ workflow CreateTable
 	$DBUsername1 = 	$Using:DBUsername
 	$DBPassword1 = $Using:DBPassword 
     
-  <#  $ServerName1= "powerbi.database.windows.net"   
-    $DatabaseName1 = "powerbidb"
-	$DBUsername1 = 	"sysgain"
-	$DBPassword1 = "Sysga1n987!" #>
-	
+ 
 	Write-Output $ServerName1
 	Write-Output $DatabaseName1
     Write-Output $DBUsername1
