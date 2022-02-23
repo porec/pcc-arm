@@ -5,6 +5,9 @@ resource "azurerm_resource_group" "vmss" {
   tags {
     environment = "codelab"
   }
+  tags = {
+    yor_trace = "a96dcb83-4b2a-4f76-bbd6-bf648ebbbd23"
+  }
 }
 
 resource "azurerm_virtual_network" "vmss" {
@@ -15,6 +18,9 @@ resource "azurerm_virtual_network" "vmss" {
 
   tags {
     environment = "codelab"
+  }
+  tags = {
+    yor_trace = "9a8b91d2-7846-4ad0-8b3e-72bcaf438c61"
   }
 }
 
@@ -35,6 +41,9 @@ resource "azurerm_public_ip" "vmss" {
   tags {
     environment = "codelab"
   }
+  tags = {
+    yor_trace = "346b6d54-a34d-423c-a47b-568c79d55073"
+  }
 }
 
 
@@ -50,6 +59,9 @@ resource "azurerm_lb" "vmss" {
 
   tags {
     environment = "codelab"
+  }
+  tags = {
+    yor_trace = "3060cffc-3a32-4714-8b9f-af8e192b00f6"
   }
 }
 
@@ -100,7 +112,7 @@ resource "azurerm_virtual_machine_scale_set" "vmss" {
   }
 
   storage_profile_image_reference {
-    id="${data.azurerm_image.image.id}"
+    id = "${data.azurerm_image.image.id}"
   }
 
   storage_profile_os_disk {
@@ -111,10 +123,10 @@ resource "azurerm_virtual_machine_scale_set" "vmss" {
   }
 
   storage_profile_data_disk {
-    lun          = 0
-    caching        = "ReadWrite"
-    create_option  = "Empty"
-    disk_size_gb   = 10
+    lun           = 0
+    caching       = "ReadWrite"
+    create_option = "Empty"
+    disk_size_gb  = 10
   }
 
   os_profile {
@@ -146,6 +158,9 @@ resource "azurerm_virtual_machine_scale_set" "vmss" {
   tags {
     environment = "codelab"
   }
+  tags = {
+    yor_trace = "a86f7f78-915a-430c-9e4c-ee45e116fe52"
+  }
 }
 
 
@@ -158,6 +173,9 @@ resource "azurerm_public_ip" "jumpbox" {
 
   tags {
     environment = "codelab"
+  }
+  tags = {
+    yor_trace = "18ed293b-44f3-489a-99df-4790ea5fa4c1"
   }
 }
 
@@ -175,6 +193,9 @@ resource "azurerm_network_interface" "jumpbox" {
 
   tags {
     environment = "codelab"
+  }
+  tags = {
+    yor_trace = "45e17b27-ae54-4099-9227-04ef2678df48"
   }
 }
 
@@ -216,5 +237,8 @@ resource "azurerm_virtual_machine" "jumpbox" {
 
   tags {
     environment = "codelab"
+  }
+  tags = {
+    yor_trace = "9f6c35e2-ff83-427c-b607-838330d50273"
   }
 }
